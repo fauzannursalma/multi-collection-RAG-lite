@@ -20,7 +20,7 @@ if "v_manager" not in st.session_state:
 
 # Page config
 st.set_page_config(
-    page_title="Multi-Collection RAG Lite",
+    page_title="Multi-Collection RAG Chatbot Lite",
     page_icon="📚",
     layout="wide"
 )
@@ -38,7 +38,7 @@ collections = v_manager.get_collections()
 collection_names = [c["name"] for c in collections]
 
 # Title
-st.title("📚 Multi-Collection RAG Lite")
+st.title("📚 Multi-Collection RAG Chatbot Lite")
 st.markdown("Create collections, upload documents, and chat with AI that knows your specific context.")
 
 # Sidebar

@@ -1,7 +1,7 @@
-# Multi-Collection RAG Lite Documentation
+# Multi-Collection RAG Chatbot Lite Documentation
 
 ## 1. Project Overview
-Multi-Collection RAG Lite is an intelligent assistant designed to answer dynamic questions based on uploaded knowledge bases. Upgraded from a static single-document RAG, it now uses a Multi-Collection architecture allowing users to construct segregated directories (e.g., Medical, Finance, Legal), bulk-upload PDF documents via drag-and-drop, and converse with Google Generative AI (Gemini) whose logic is grounded securely within the selected active collection.
+Multi-Collection RAG Chatbot Lite is an intelligent assistant designed to answer dynamic questions based on uploaded knowledge bases. Upgraded from a static single-document RAG, it now uses a Multi-Collection architecture allowing users to construct segregated directories (e.g., Medical, Finance, Legal), bulk-upload PDF documents via drag-and-drop, and converse with Google Generative AI (Gemini) whose logic is grounded securely within the selected active collection.
 
 ## 2. Key Features
 - **Dynamic Multi-Collection Capabilities**: Create specific topic collections directly from the UI and switch between them, ensuring chat history and context remain heavily isolated and relevant to the subject.

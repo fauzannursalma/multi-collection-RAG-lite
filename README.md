@@ -1,4 +1,4 @@
-<h1 align="center">📚 Multi-Collection RAG Lite</h1>
+<h1 align="center">📚 Multi-Collection RAG Chatbot Lite</h1>
 
 <p align="center">
   <em>A powerful, context-aware AI assistant built with Retrieval-Augmented Generation (RAG) that allows you to manage multiple distinct knowledge bases (collections) from bulk PDF documents.</em>
