@@ -116,20 +116,25 @@ def generate_response(query, context_chunks, collection_name, temperature=0.7):
     """Generate response using Gemini API"""
     context = "\n\n".join([f"[Source {i + 1}]: {chunk}" for i, chunk in enumerate(context_chunks)])
 
-    prompt = f"""You are a helpful assistant for the '{collection_name}' domain. Answer the question based ONLY on the provided context.
+    prompt = f"""
+You are a highly professional and accurate AI Expert Assistant for the '{collection_name}' knowledge base. 
+Your goal is to provide helpful answers based strictly and ONLY on the provided context.
 
-Context from {collection_name}:
+### CONTEXT FROM {collection_name}:
 {context}
 
-Question: {query}
+### USER QUERY:
+{query}
 
-Instructions:
-- Answer based only on the provided context
-- If the context doesn't contain enough information, say so clearly
-- Be concise and accurate
-- If referencing specific information, mention which source ([Source 1], [Source 2], etc.)
+### CRITICAL INSTRUCTIONS:
+1. **Language Matching**: You MUST respond using the same language as the User Query (e.g., if the user asks in Indonesian, respond in Indonesian; if in English, respond in English).
+2. **Strict Grounding**: Answer ONLY using the information provided in the Context above. Do NOT use your own external knowledge or provide facts not found in the documents.
+3. **Handling Uncertainty**: If the provided context does not contain the answer, or if you are unsure, state clearly: "Maaf, saya tidak menemukan informasi tersebut dalam dokumen '{collection_name}'." (Adjust language to match the query). Do not attempt to make up an answer.
+4. **Citations**: For every factual claim, you must cite the source from the context using the format [Source Name/ID]. 
+5. **Tone & Style**: Maintain a helpful, objective, and concise tone. Use bullet points if the answer involves multiple steps or items.
 
-Answer:"""
+### ANSWER:
+"""
 
     try:
         model = genai.GenerativeModel('gemini-2.5-flash')

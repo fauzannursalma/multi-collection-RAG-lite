@@ -16,6 +16,7 @@ Catatan perubahan harian pada project Medical RAG Chatbot.
 - **Combined Progress Tracking:** Memodifikasi rendering hook callback `st.progress` agar mampu mendistribusikan animasi kemajuan secara akurat dengan menghitung sisa fraksi tugas di saat array multipel dokumen diproses oleh Transformer.
 - **Isolated Contextual Memory:** Menerapkan arsitektur baru bagi Streamlit Session State yakni memori dipilah berbasis key koleksi (`st.session_state.messages[active_collection]`). Ini menjaga percakapan di koleksi A tidak bercampur halusinasi dengan dokumen di koleksi B.
 - **Dynamic Prompt Generative AI:** Template prompt Gemini 2.5 dihapus sifat _hardcode_-nya dan sekarang diinjeksi via nama koleksi saat ini (`active_collection`), memastikan AI menyesuaikan nadanya berdasarkan ruang data yang terpilih.
+- **Strict Execution Prompt (Update):** Merombak total `system prompt` di `app.py` agar jauh lebih disiplin. AI kini diwajibkan mematuhi pedoman *Language Matching* (membalas sesuai bahasa *User Query*), *Strict Grounding* (menolak rujukan eksternal dan wajib menolak menjawab/fallback jika tidak ditemukan di teks), serta menjaga format lebih rapi terstruktur (bullet points & citations).
 - **Environment Bugfix (`ModuleNotFoundError`):** Menambahkan package `torchvision` ke dalam `requirements.txt` dan menginstalnya guna membendung error dari engine image-loader tersembunyi `zoedepth` yang diminta sistem dependensi transformer saat Streamlit dihidupkan.
 
 **Files Created & Deleted:**

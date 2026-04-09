@@ -8,7 +8,7 @@ Multi-Collection RAG Chatbot Lite is an intelligent assistant designed to answer
 - **Advanced Bulk Document Pipeline**: Drag and drop multiple PDF documents simultaneously. The system seamlessly handles batch extraction, chunking, and appends new high-dimensional embeddings incrementally.
 - **SQLite Metadata Tracker**: All file uploads, hashing records (preventing duplicate processing), and collection hierarchies are robustly tracked using an internal SQLite database (`rag.db`).
 - **Local Vector Database**: Built upon **FAISS** (Facebook AI Similarity Search) for blazingly fast context chunk retrieval natively stored per collection.
-- **Generative AI Integration**: Powered by **Google's Gemini 2.5 Flash** model with dynamic prompt-injections to generate confident responses based safely on the provided FAISS references.
+- **Generative AI Integration**: Powered by **Google's Gemini 2.5 Flash** model with a strictly engineered system prompt. It features automatic language matching, absolute hallucination prevention (Strict Grounding), and enforced source citations based safely on the provided FAISS references.
 - **Interactive Progress UI**: The Streamlit interface displays real-time embedding compilation animations, and offers source references so users know exactly *where* the AI pulled facts from.
 
 ## 3. Technology Stack
@@ -46,7 +46,7 @@ The application runs as a cohesive live application governed heavily by user act
     - Raw PDFs are dropped into `collections/<id>/documents`.
     - Text blocks are cleanly chunked and batched identically to the `all-MiniLM` model dimension size.
     - Appended vectors (`faiss.add()`) update the store incrementally.
-4. **Contextual Answering**: Questions are reduced to vectors, cross-referenced within the active collection's localized FAISS index, and subsequently forwarded alongside the chunks to the Gemini API formatted under dynamic conversational guardrails.
+4. **Contextual Answering**: Questions are reduced to vectors, cross-referenced within the active collection's localized FAISS index, and subsequently forwarded alongside the chunks to the Gemini API. The prompt is strictly guarded to prevent external knowledge hallucination, automatically adapt to the user's language, and enforce explicit source citations.
 
 ## 6. Installation & Setup
 
