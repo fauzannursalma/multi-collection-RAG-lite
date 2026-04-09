@@ -1,0 +1,23 @@
+# Environments
+.env
+venv/
+env/
+
+# Data & Dynamic Local Folders
+data/
+vector_store/
+
+# IDE & OS Specific
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Python Caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Temporary Files
+*.log
